@@ -1,5 +1,9 @@
 import React from "react";
 
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import SiteRoutes from "./components/SiteRoutes";
+
 const App = () => {
   return (
     <div>
