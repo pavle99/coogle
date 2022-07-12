@@ -6,7 +6,7 @@ const baseURL = "https://google-search3.p.rapidapi.com/api/v1";
 export const ResultContextProvider: React.FC<any> = ({ children }) => {
   const [results, setResults] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [searchTerm, setSearchTerm] = useState<string>("TypeScript React");
 
   const getResults = async (type: string) => {
     setIsLoading(true);
