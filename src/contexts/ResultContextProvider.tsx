@@ -21,7 +21,13 @@ export const ResultContextProvider: React.FC<any> = ({ children }) => {
 
     const data = await response.json();
 
-    setResults(data);
+    if (type.includes("/news"))
+      setResults(data.entries)
+    else if (type.includes('/images'))
+      setResults(data.images_reslts);
+    else
+      setResults(data.results);
+
     setIsLoading(false);
   };
 
