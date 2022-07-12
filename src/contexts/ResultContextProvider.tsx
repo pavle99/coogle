@@ -22,9 +22,11 @@ export const ResultContextProvider: React.FC<any> = ({ children }) => {
     const data = await response.json();
 
     if (type.includes("/news"))
-      setResults(data.entries)
-    else if (type.includes('/images'))
-      setResults(data.images_reslts);
+      setResults(data.entries);
+    else if (type.includes("/image"))
+      setResults(data.image_results);
+    else if (type.includes("video"))
+      setResults(data.results.filter((video: { link: string }) => video.link.startsWith("https://www.youtube")));
     else
       setResults(data.results);
 
