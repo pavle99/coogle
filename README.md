@@ -1,6 +1,6 @@
 # Coogle
 
-![Coogle](https://i.ibb.co/Y08cXW7/Screenshot-20220628-184101.png)
+![Coogle](https://user-images.githubusercontent.com/73827472/178761912-f29b33d7-da21-4caf-b4f8-a8fa5218edc5.png)
 
 ## Introduction
 
