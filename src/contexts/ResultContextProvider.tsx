@@ -24,7 +24,7 @@ const baseURL = "https://google-search3.p.rapidapi.com/api/v1";
 export const ResultContextProvider: React.FC<any> = ({ children }) => {
   const [results, setResults] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [searchTerm, setSearchTerm] = useState<string>(localStorage.getItem("searchItem") ?? "");
 
   const getResults = async (type: string) => {
     setIsLoading(true);
@@ -44,7 +44,7 @@ export const ResultContextProvider: React.FC<any> = ({ children }) => {
     else if (type.includes("/image"))
       setResults(data.image_results);
     else if (type.includes("video"))
-      setResults(data.results.filter((video: { link: string }) => video.link.startsWith("https://www.youtube")));
+      setResults(data.results.filter((video: { link: string }) => video.link.startsWith("https://www.youtube") && !video.link.includes("channel")));
     else
       setResults(data.results);
 

@@ -10,7 +10,14 @@ const Search = () => {
   const [debouncedValue] = useDebounce<string>(text, 500);
 
   useEffect(() => {
-    if (debouncedValue) setSearchTerm(debouncedValue);
+    setText(localStorage.getItem("searchItem") ?? "");
+  }, []);
+
+  useEffect(() => {
+    if (debouncedValue) {
+      setSearchTerm(debouncedValue);
+      localStorage.setItem("searchItem", debouncedValue);
+    }
   }, [debouncedValue]);
 
   return (
