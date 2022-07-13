@@ -6,7 +6,6 @@ import { useDebounce } from "use-debounce";
 
 const Search = () => {
   const [text, setText] = useState<string>("");
-  // @ts-ignore
   const { setSearchTerm } = useResultContext();
   const [debouncedValue] = useDebounce<string>(text, 500);
 

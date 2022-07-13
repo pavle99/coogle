@@ -29,7 +29,6 @@ interface NewsResults {
 }
 
 const Results = () => {
-  // @ts-ignore
   const { results, isLoading, getResults, searchTerm } = useResultContext();
   const location = useLocation();
 

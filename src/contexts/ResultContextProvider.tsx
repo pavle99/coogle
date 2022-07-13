@@ -1,6 +1,24 @@
 import React, { createContext, useContext, useState } from "react";
 
-const ResultContext = createContext({});
+interface ResultProps {
+  getResults: (type: string) => Promise<void>,
+  results: any,
+  searchTerm: string,
+  setSearchTerm: React.Dispatch<React.SetStateAction<string>>,
+  isLoading: boolean
+}
+
+const ResultContext = createContext<ResultProps>({
+  getResults(type: string): Promise<void> {
+    return Promise.resolve(undefined);
+  },
+  isLoading: false,
+  results: undefined,
+  searchTerm: "",
+  setSearchTerm(value: ((prevState: string) => string) | string): void {
+  }
+});
+
 const baseURL = "https://google-search3.p.rapidapi.com/api/v1";
 
 export const ResultContextProvider: React.FC<any> = ({ children }) => {
