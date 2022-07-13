@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import Links from "./Links";
-import { useResultContext } from "../contexts/ResultContextProvider";
+import { useResultContext } from "../context/ResultContextProvider";
 import { useDebounce } from "use-debounce";
 
 const Search = () => {
@@ -30,7 +30,11 @@ const Search = () => {
         onChange={(e) => setText(e.target.value)}
       />
       {!text && (
-        <button type="button" className="absolute top-1.5 right-4 text-2xl text-gray-500" onClick={() => setText("")}>
+        <button
+          type="button"
+          className="absolute top-1.5 right-4 text-2xl text-gray-500"
+          onClick={() => setText("")}
+        >
           X
         </button>
       )}

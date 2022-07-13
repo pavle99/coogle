@@ -1,16 +1,14 @@
 import React from "react";
-import { Oval } from "react-loader-spinner";
+import { Rings } from "react-loader-spinner";
 
-const Loading: React.FC<any> = () => {
+const Loading = () => {
   return (
     <div className="flex justify-center items-center">
-      <Oval
+      <Rings
         ariaLabel="loading-indicator"
         height={550}
         width={80}
-        strokeWidth={5}
         color="#00BFFF"
-        secondaryColor="blue"
       />
     </div>
   );
